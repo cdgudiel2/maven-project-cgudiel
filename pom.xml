@@ -146,7 +146,7 @@
             <scope>provided</scope>
         </dependency>
         
-            <dependency>
+        <dependency>
             <groupId>org.mule.modules</groupId>
             <artifactId>mule-module-json</artifactId>
             <version>${mule.version}</version>

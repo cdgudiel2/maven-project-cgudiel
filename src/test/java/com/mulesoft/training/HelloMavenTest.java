@@ -22,15 +22,16 @@ public class HelloMavenTest extends FunctionalTestCase {
     @Test
     public void retrieveFlightsAddsAppropriateHeader() throws Exception {
       MuleEvent event = runFlow("retrieveFlights");
-      String contentType = event.getMessage().getOutboundProperty("Content-Type");
       System.out.println("\n\nTestcase#2 -------------------> HTTP Port: " + myPort.getNumber() + "\n\n");
+      String contentType = event.getMessage().getOutboundProperty("Content-Type");
       assertEquals("application/json", contentType);
     }
     
     @Override
-    protected String getConfigFile() {
+    protected String [] getConfigFiles() {
     	// must match mule project name
-        return "maven-project-cgudiel.xml";
+        String[] files = {"maven-project-cgudiel.xml", "common-resources.xml"};
+        return files;
     }
 
 }
